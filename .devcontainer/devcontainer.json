@@ -1,0 +1,22 @@
+{
+    "name": "Ubuntu",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+        "extensions": [
+            "ms-vscode.cpptools-extension-pack",
+            "llvm-vs-code-extensions.vscode-clangd",
+            "ms-azuretools.vscode-docker",
+            "ms-vscode.makefile-tools",
+            "rust-lang.rust-analyzer",
+            "luveti.kconfig",
+            "plorefice.devicetree",
+            "lorent-revest.patchwork",
+            "florent-revest.git-send-email"
+        ]}
+    },
+    "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}"
+    // "remoteUser": "vscode"
+}
