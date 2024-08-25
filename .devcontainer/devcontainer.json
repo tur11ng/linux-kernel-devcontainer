@@ -14,7 +14,8 @@
             "luveti.kconfig",
             "plorefice.devicetree",
             "lorent-revest.patchwork",
-            "florent-revest.git-send-email"
+            "florent-revest.git-send-email",
+            "npxms.hide-gitignored"
         ]}
     },
     "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}"
