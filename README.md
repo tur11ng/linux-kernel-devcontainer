@@ -13,5 +13,5 @@ make LLVM=1 -j$(nproc)
 
 # For debugging configurations see : https://github.com/Rhydon1337/linux-kernel-debugging
 vng -r arch/x86/boot/bzImage --memory=1G --disable-microvm --verbose --debug
-vng --gdb
+vng -r arch/x86/boot/bzImage --memory=1G --disable-microvm --verbose --gdb # or simply launch the "Linux kernel debug" profile from the vscode debugger
 ```
