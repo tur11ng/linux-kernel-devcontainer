@@ -1,0 +1,36 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Linux kernel debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/linux/vmlinux",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerServerAddress": "localhost:1234",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Load kernel symbols",
+                    "text": "symbol-file ${workspaceFolder}/linux/vmlinux",
+                    "ignoreFailures": true
+                }
+            ],
+            "logging": {
+                "trace": true,
+                "traceResponse": true,
+                "engineLogging": true
+            }
+        }
+    ]
+}
