@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Linux kernel debug",
+            "name": "Linux kernel",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/linux/vmlinux",
