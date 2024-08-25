@@ -1,6 +1,6 @@
 # Linux kernel Devcontainer
 
-A Devcontainer dedicated for Linux kernel development and debugging, including all the required distro packages and [virtme-ng](https://github.com/arighi/virtme-ng) for seamlessly running and debugging the kernel. It is ideal for kernel newbies.
+A Devcontainer dedicated for Linux kernel development and debugging, including all the required distro packages and [virtme-ng](https://github.com/arighi/virtme-ng) for seamlessly running and debugging the kernel. All of these bundled from the ease of the VSCode user  interface. It is ideal for kernel newbies.
 
 
 ## Usage
