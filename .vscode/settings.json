@@ -1,0 +1,17 @@
+{
+    "clangd.arguments": [
+        "-background-index",
+        "-compile-commands-dir=${workspaceFolder}/linux"
+    ],
+    "files.exclude": {
+        "**/*.o": true,
+        "**/*.cmd": true,
+        "**/*.a": true,
+        "**/*.S": true,
+        "**/*.syms": true,
+        "**/*.map": true,
+        "**/.tmp*": true,
+        "**/.*.h": true,
+        "**/.*.c": true,
+    }
+}
