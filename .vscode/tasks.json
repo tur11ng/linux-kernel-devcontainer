@@ -2,6 +2,32 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "Prepare Rust",
+            "type": "shell",
+            "command": "make LLVM=1 rust-analyzer",
+            "options": {
+                "cwd": "${workspaceFolder}/linux/"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Config kernel",
+            "type": "shell",
+            "command": "make menuconfig",
+            "options": {
+                "cwd": "${workspaceFolder}/linux/"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
             "label": "Build kernel",
             "type": "shell",
             "command": "make LLVM=1",
