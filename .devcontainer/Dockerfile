@@ -27,4 +27,4 @@ RUN rustup component add rustfmt
 RUN rustup component add clippy
 RUN cargo install --locked bindgen-cli
 
-WORKDIR /opt
+WORKDIR /workspaces
