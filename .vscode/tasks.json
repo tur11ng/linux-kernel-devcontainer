@@ -1,0 +1,61 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build kernel",
+            "type": "shell",
+            "command": "make LLVM=1",
+            "options": {
+                "cwd": "${workspaceFolder}/linux/"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Run kernel",
+            "type": "shell",
+            "command": "vng -r arch/x86/boot/bzImage --memory=1G --disable-microvm --verbose",
+            "options": {
+                "cwd": "${workspaceFolder}/linux/"
+            },
+            "dependsOrder": "sequence",
+            "dependsOn": ["Build Kernel"],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Run kernel and kdb",
+            "type": "shell",
+            "command": "vng -r arch/x86/boot/bzImage --memory=1G --disable-microvm --verbose --debug",
+            "options": {
+                "cwd": "${workspaceFolder}/linux/"
+            },
+            "dependsOrder": "sequence",
+            "dependsOn": ["Build Kernel"],
+            "problemMatcher": {
+                "owner": "custom",
+                "fileLocation": ["relative", "${workspaceFolder}"],
+                "pattern": [
+                  {
+                    "regexp": ".",
+                    "file": 1,
+                    "location": 2,
+                    "message": 3
+                  }
+                ],
+                "background": {
+                  "activeOnStart": true,
+                  "beginsPattern": ".",
+                  "endsPattern": "virtme-ng-init: initialization done"  // This matches the specific string when the kernel is ready
+                }
+            },
+            "isBackground": true,
+        },
+    ]
+}

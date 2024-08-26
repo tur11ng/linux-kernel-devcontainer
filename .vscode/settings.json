@@ -13,5 +13,12 @@
         "**/.tmp*": true,
         "**/.*.h": true,
         "**/.*.c": true,
-    }
+    },
+    "makefile.makefilePath": "${workspaceFolder}/linux",
+    "makefile.configureOnOpen": false,
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "rust-analyzer.linkedProjects": [ "${workspaceFolder}/linux/rust-project.json" ],
+    "rust-analyzer.diagnostics.disabled": [
+        "macro-error"
+    ]
 }

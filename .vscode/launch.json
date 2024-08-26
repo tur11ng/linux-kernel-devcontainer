@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Linux kernel",
+            "name": "Debug kernel",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/linux/vmlinux",
@@ -14,6 +14,7 @@
             "MIMode": "gdb",
             "miDebuggerServerAddress": "localhost:1234",
             "miDebuggerPath": "/usr/bin/gdb",
+            "preLaunchTask": "Run kernel and kdb",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -31,6 +32,6 @@
                 "traceResponse": true,
                 "engineLogging": true
             }
-        }
+        },
     ]
 }
