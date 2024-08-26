@@ -4,7 +4,7 @@
         {
             "label": "Prepare Rust",
             "type": "shell",
-            "command": "make rustavailable && LLVM=1 rust-analyzer",
+            "command": "make rustavailable && make LLVM=1 rust-analyzer",
             "options": {
                 "cwd": "${workspaceFolder}/linux/"
             },
@@ -28,7 +28,7 @@
             }
         },
         {
-            "label": "Config kernel",
+            "label": "Configure kernel",
             "type": "shell",
             "command": "make menuconfig",
             "options": {
@@ -41,9 +41,35 @@
             }
         },
         {
-            "label": "Build kernel",
+            "label": "Default configure kernel",
             "type": "shell",
-            "command": "make LLVM=1",
+            "command": "make menuconfig",
+            "options": {
+                "cwd": "${workspaceFolder}/linux/"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Build kernel without debug symbols",
+            "type": "shell",
+            "command": "make LLVM=1 -j$(nproc)",
+            "options": {
+                "cwd": "${workspaceFolder}/linux/"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Build kernel with debug symbols",
+            "type": "shell",
+            "command": "make LLVM=1 CONFIG_DEBUG_INFO=y CONFIG_DEBUG_INFO_REDUCED=n CONFIG_DEBUG_INFO_SPLIT=y CONFIG_DEBUG_INFO_DWARF5=y -j$(nproc)",
             "options": {
                 "cwd": "${workspaceFolder}/linux/"
             },
@@ -69,14 +95,14 @@
             }
         },
         {
-            "label": "Run kernel and kdb",
+            "label": "Run kernel in debug mode",
             "type": "shell",
             "command": "vng -r arch/x86/boot/bzImage --memory=1G --disable-microvm --verbose --debug",
             "options": {
                 "cwd": "${workspaceFolder}/linux/"
             },
             "dependsOrder": "sequence",
-            "dependsOn": ["Build Kernel"],
+            "dependsOn": ["Build kernel with debug symbols"],
             "problemMatcher": {
                 "owner": "custom",
                 "fileLocation": ["relative", "${workspaceFolder}"],
