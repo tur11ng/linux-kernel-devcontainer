@@ -4,7 +4,20 @@
         {
             "label": "Prepare Rust",
             "type": "shell",
-            "command": "make LLVM=1 rust-analyzer",
+            "command": "make rustavailable && LLVM=1 rust-analyzer",
+            "options": {
+                "cwd": "${workspaceFolder}/linux/"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Prepare C/C++",
+            "type": "shell",
+            "command": "make compile_commands.json",
             "options": {
                 "cwd": "${workspaceFolder}/linux/"
             },
