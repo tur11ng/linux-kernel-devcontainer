@@ -87,7 +87,7 @@
                 "cwd": "${workspaceFolder}/linux/"
             },
             "dependsOrder": "sequence",
-            "dependsOn": ["Build Kernel"],
+            "dependsOn": ["Build Kernel without debug symbols"],
             "problemMatcher": [],
             "group": {
                 "kind": "build",

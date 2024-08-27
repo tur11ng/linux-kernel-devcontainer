@@ -14,7 +14,7 @@
             "MIMode": "gdb",
             "miDebuggerServerAddress": "localhost:1234",
             "miDebuggerPath": "/usr/bin/gdb",
-            "preLaunchTask": "Run kernel and kdb",
+            "preLaunchTask": "Run kernel in debug mode",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
