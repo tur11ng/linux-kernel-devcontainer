@@ -15,7 +15,8 @@
             "plorefice.devicetree",
             "lorent-revest.patchwork",
             "florent-revest.git-send-email",
-            "npxms.hide-gitignored"
+            "npxms.hide-gitignored",
+            "tur11ng.action-buttons-customizer"
         ]}
     },
     "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}"

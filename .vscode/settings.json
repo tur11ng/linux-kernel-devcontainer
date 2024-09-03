@@ -20,5 +20,22 @@
     "rust-analyzer.linkedProjects": [ "${workspaceFolder}/linux/rust-project.json" ],
     "rust-analyzer.diagnostics.disabled": [
         "macro-error"
+    ],
+    "CustomizeToolbar.buttonConfig": [
+        {
+            "name": "Build",
+            "icon": {
+                "light": "builtin/build_light.svg",
+                "dark": "builtin/build_dark.svg"
+            },
+            "command_vscode": [ "workbench.action.tasks.runTask", "Build kernel without debug symbols" ],
+            "when": "\\.rs$"
+        },
+        {
+            "name": "Run",
+            "icon": "notebook-execute",
+            "command_vscode": [ "workbench.action.tasks.runTask", "Run kernel" ],
+            "when": "\\.rs$"
+        },
     ]
 }

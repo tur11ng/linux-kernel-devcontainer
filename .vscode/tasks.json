@@ -60,7 +60,15 @@
             "options": {
                 "cwd": "${workspaceFolder}/linux/"
             },
-            "problemMatcher": [],
+            "problemMatcher": {
+                "base": "$rustc",
+                "fileLocation": ["relative", "${workspaceFolder}/linux"],
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "focus": true
+            },
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -73,7 +81,23 @@
             "options": {
                 "cwd": "${workspaceFolder}/linux/"
             },
-            "problemMatcher": [],
+            "problemMatcher": {
+                "owner": "rust",
+                "fileLocation": ["relative", "${workspaceFolder}"],
+                "pattern": [
+                    {
+                        "regexp": "^\\s*(-->?)\\s*(.+):(\\d+):(\\d+)",
+                        "file": 2,
+                        "line": 3,
+                        "column": 4
+                    },
+                    {
+                        "regexp": "^\\s*(error|warning|note|help):\\s+(.*)$",
+                        "severity": 1,
+                        "message": 2
+                    }
+                ]
+            },
             "group": {
                 "kind": "build",
                 "isDefault": true
