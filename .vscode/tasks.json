@@ -141,7 +141,8 @@
                 "background": {
                   "activeOnStart": true,
                   "beginsPattern": ".",
-                  "endsPattern": "virtme-ng-init: initialization done"  // This matches the specific string when the kernel is ready
+                //   "endsPattern": "virtme-ng-init: initialization done",  // This matches the specific string when the kernel is ready
+                  "endsPattern": "Booting the kernel"  // This matches the specific string when the kernel is ready
                 }
             },
             "isBackground": true,
