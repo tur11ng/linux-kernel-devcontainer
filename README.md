@@ -28,15 +28,20 @@ make LLVM=1 rust-analyzer # or Task : Prepare Rust
 
 # Build kernel
 make LLVM=1 -j$(nproc) # or Task : Build kernel
+# or
+make LLVM=1 LD=ld.lld -j$(nproc)
 
 # Run kernel
 vng -r arch/x86/boot/bzImage --memory=1G --disable-microvm --verbose # or Task : Run kernel
 
 # Debug kernel
 # Enable debug symbols. For more information see : https://www.kernel.org/doc/html/v4.14/dev-tools/gdb-kernel-debugging.html
+echo "CONFIG_DEBUG_INFO=y" >> .config
+echo "CONFIG_DEBUG_INFO_DWARF5=y" >> .config
+
 # After you have enabled debug symbols, compile the kernel again like above and continue with the following commands
 vng -r arch/x86/boot/bzImage --memory=1G --disable-microvm --verbose --debug
-vng -r arch/x86/boot/bzImage --memory=1G --disable-microvm --verbose --gdb"
+vng -r arch/x86/boot/bzImage --memory=1G --disable-microvm --verbose --gdb
 # or Run and Debug -> Debug kernel (it will build with the kernel with debug symbols, run the kernel in debug mode and attach the debugger)
 
 # For more information on available Tasks, check out .vscode/tasks.json or Ctrl+Shift+P -> Tasks: Run Task.
