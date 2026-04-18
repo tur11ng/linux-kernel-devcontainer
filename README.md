@@ -22,7 +22,7 @@ make defconfig # or Task : Configure kernel
 # Setup C/C++ development
 make LLVM=1 compile_commands.json # or Task : Prepare C/C++
 
-# Setup Rust development
+# Setup Rust development (Optional)
 # Enable rust for linux, for more information see : https://docs.kernel.org/rust/quick-start.html#configuration
 make LLVM=1 rust-analyzer # or Task : Prepare Rust
 
